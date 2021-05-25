@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.veterinaria.dao.ITrackingDao;
 import com.veterinaria.entity.Estado;
@@ -34,6 +35,13 @@ public class ServiceTrackingImpl implements ITrackingService{
 	public Tracking findByIdPedido(int id_ped) {
 		// TODO Auto-generated method stub
 		return trakingDao.findByIdPedido(id_ped);
+	}
+
+	@Override
+	@Transactional
+	public Tracking save(Tracking track) {
+		// TODO Auto-generated method stub
+		return trakingDao.save(track);
 	}
 	
 

@@ -131,7 +131,7 @@ public class PedidoController {
 	
 	
 	
-	@Secured({ "ROLE_VENDEDOR", "ROLE_ADMIN", "ROLE_CLIENTE" })
+	@Secured({ "ROLE_VETERINARIO", "ROLE_ADMIN", "ROLE_CLIENTE" })
 	//@GetMapping("/usuarios/{id}")
 	@GetMapping("/pedidos/{id}")
 	//@GetMapping("/facturas/{id}")

@@ -42,13 +42,13 @@ public class ServicioController {
 		return ResponseEntity.ok(servicioService.findById(id));
 	}
 
-	@Secured({"ROLE_VENDEDOR","ROLE_ADMIN"})
+	@Secured({"ROLE_VETERINARIO","ROLE_ADMIN"})
 	@PostMapping("/servicios")
 	public ResponseEntity<Servicio> insert(@RequestBody Servicio obj) {
 		return ResponseEntity.ok(servicioService.save(obj));
 	}
 
-	@Secured({"ROLE_VENDEDOR","ROLE_ADMIN"})
+	@Secured({"ROLE_VETERINARIO","ROLE_ADMIN"})
 	@PutMapping("/servicios/{id}")
 	public ResponseEntity<Servicio> update(@RequestBody Servicio obj, @PathVariable int id) throws NotFoundException {
 		Servicio serActual = servicioService.findById(id)
@@ -67,7 +67,7 @@ public class ServicioController {
 		return ResponseEntity.ok(updatedServicio);
 
 	}
-	@Secured({"ROLE_VENDEDOR","ROLE_ADMIN"})
+	@Secured({"ROLE_VETERINARIO","ROLE_ADMIN"})
 	@DeleteMapping("/servicios/{id}")
 	public void delete(@PathVariable int id) {
 		servicioService.delete(id);

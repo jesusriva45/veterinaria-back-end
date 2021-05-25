@@ -15,5 +15,8 @@ public interface ITrackingService {
 	public abstract Optional<Tracking> findById(int id);
 	
 	public abstract Tracking findByIdPedido(int id_ped);
+	
+	public abstract Tracking save(Tracking track);
+	
 
 }
